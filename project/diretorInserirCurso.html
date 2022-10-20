@@ -71,16 +71,26 @@
             <h4>Inserir Cursos</h4>
           </div>
         </nav>
-        <form method="POST" action="diretorInserirCurso.php">
+        <form method="POST" action="../assets/php/inserirCurso.php">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nome">Nome do Curso</label>
               <input
                 type="text"
                 class="form-control"
-                name="nome"
-                id="nome"
+                name="name"
+                id="name"
                 placeholder="Nome do Curso"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="nome">ID do Curso</label>
+              <input
+                type="number"
+                class="form-control"
+                name="id"
+                id="id"
+                placeholder="ID do Curso"
               />
             </div>
             <div class="form-group col-md-6">
