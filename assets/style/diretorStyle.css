@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #rgba(214,220,229,255); /*FUNDO DA PAGINA DO TEXTO*/
+    background: rgba(214,220,229,255); /*FUNDO DA PAGINA DO TEXTO*/
 }
 
 p {
