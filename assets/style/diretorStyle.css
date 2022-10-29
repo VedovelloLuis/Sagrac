@@ -2,7 +2,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: rgba(214, 220, 229, 255); /*FUNDO DA PAGINA DO TEXTO*/
+  background: #ffffff; /*FUNDO DA PAGINA DO TEXTO*/
 }
 
 p {
@@ -10,7 +10,7 @@ p {
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.7em;
-  color: #000000; /*TEXTO PRETO NO CORPO DO TEXTO*/
+  color: #0f5f96; /*TEXTO PRETO NO CORPO DO TEXTO*/
 }
 
 a,
@@ -52,15 +52,25 @@ a:focus {
   width: 100%;
   align-items: stretch;
   perspective: 1500px;
+  
 }
 
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background: rgba(231, 230, 230, 255);
-  color: rgb(0, 0, 0);
+  color: #137DC5;
   transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
   transform-origin: bottom left;
+  padding: 20px;
+  overflow-x: hidden;
+  background: color #ddd;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 17px;
+  
+
 }
 
 #sidebar.active {
@@ -70,7 +80,7 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: rgba(231, 230, 230, 255);
+  background:  #fff;
 }
 
 #sidebar ul.components {
@@ -78,7 +88,7 @@ a:focus {
 }
 
 #sidebar ul p {
-  color: #fff;
+  color: #137DC5;
   padding: 10px;
 }
 
@@ -95,8 +105,8 @@ a:focus {
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-  color: rgb(0, 0, 0);
-  background: rgba(231, 230, 230, 255); /* FUNDO DE DASHBOARD e perfil*/
+  color: #137DC5;
+  background: #ffffff; /* FUNDO DE DASHBOARD e perfil*/
 }
 
 a[data-toggle="collapse"] {
@@ -114,7 +124,7 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: rgba(231, 230, 230, 255);
+  background: #ffffff ;
 }
 
 ul.CTAs {
@@ -131,13 +141,13 @@ ul.CTAs a {
 
 a.download {
   background: #fff;
-  color: #7386d5;
+  color: #ffffff ;
 }
 
 a.article,
 a.article:hover {
-  background: #4a4f66 !important;
-  color: #fff !important;
+  background: #1a1a1a !important;
+  color: #137DC5 !important;
 }
 
 /* ---------------------------------------------------
