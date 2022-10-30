@@ -82,7 +82,7 @@ input[type="password"] {
 
 .login {
   width: 600px;
-  background: rgba(231, 230, 230, 255);
+  background: #ffffff;
   border-radius: 4%;
   padding: 20px 20px;
   margin-left: 5em;
@@ -107,7 +107,7 @@ input[type="password"] {
   padding-top: 10px;
   padding-left: 0;
   font-size: 18px;
-  color: rgba(47, 85, 151, 255);
+  color: #ffffff;
   font-weight: bold;
 }
 
