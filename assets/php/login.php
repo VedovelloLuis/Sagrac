@@ -4,33 +4,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link
       rel="stylesheet"
-      href="../assets/style/login.css"
+      href="../style/login.css"
       style_type="text/css"
     />
     <link
       rel="icon"
       type="image/x-icon"
-      href="../assets/img/sagracIcone.png"
+      href="../img/sagracIcone.png"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login SAGRAC</title>
   </head>
+
   <body>
     <br /><br /><br />
-    <img src="none.png" align="right" width="0.5%" height="75%" />
-    <img src="../assets/img/Group.png" align="right" width="40%" height="80%" />
+
     <div class="center">
       <div class="login">
         <div class="container-head">
-          <img src="../assets/img/sagracIcone.png" />
+          <img src="../img/sagracIcone.png" />
           <h1>SAGRAC</h1>
         </div>
         <p class="bv">Bem vindo ao Sistema Automatizado de Grade  Curricular.</p>
-        <forma action="post">
+
+        <form method="post" action="index.php">
+
           <label>Email:</label><br />
           <input
             type="text"
-            name="usuario"
+            name="email"
             placeholder="Digite seu email:"
             class="text-field"
           /><br />
@@ -42,12 +44,13 @@
             class="password-field"
           />
           <p class="link"><a href="#">Esqueceu a senha?</a></p>
-          <a href="diretorHome.html">
+
             <input type="submit" name="enviar" value="Entrar" />
-          </a>
+
           <p class="duvidas">Insira os dados acima.</p>
         </forma>
       </div>
     </div>
   </body>
+  
 </html>

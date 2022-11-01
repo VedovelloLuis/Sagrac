@@ -8,28 +8,27 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="../assets/img/sagracIcone.ico"
+      href="../img/sagracIcone.ico"
     />
     <link
       rel="stylesheet"
-      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../assets/style/diretorStyle.css" />
-    <link href="../assets/style/diretorHome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/diretorStyle.css" />
+    <link href="../style/diretorHome.css" rel="stylesheet" />
   </head>
   <body>
     <div class="wrapper">
-      <nav id="sidebar">
+    <nav id="sidebar">
         <div class="sidebar-header">
           <img
-            src="../assets/img/sagracletras.png"
+            src="../img/sagracletras.png"
             width="110%"
             height="110%"
             align="center"
           />
 
         </div>
-
         <ul class="list-unstyled components">
           <li class="active">
             <a
@@ -39,26 +38,21 @@
               class="dropdown-toggle"
               >Criação de Grade</a
             >
-
             <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>
-                <a href="diretorInserirCurso.html">Inserir Curso </a>
+                <a href="diretorInserirCurso.php">Inserir Curso </a>
               </li>
               <li>
-                <a href="diretorEditarCurso.html">Editar Curso</a>
+                <a href="diretorEditarCurso.php">Editar Curso</a>
               </li>
-
               <li>
-                <a href="diretorVisualizarCursos.html"
-                  >Visualização dos Cursos</a
-                >
+                <a href="diretorVisualizarCursos.php">Visualização dos Cursos</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="diretorHome.html">Home</a>
-            <a href="login.html">Logout</a>
-
+            <a href="diretorHome.php">Home</a>
+            <a href="login.php">Logout</a>
             <ul class="list-unstyled CTAs"></ul>
           </li>
         </ul>
