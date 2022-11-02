@@ -105,65 +105,37 @@ include('config.php');
         <?php 
         
         $selecao = "SELECT * FROM tab_curso";
-      $result_query = mysqli_query($conexao, $selecao);
-      if (mysqli_query($conexao, $selecao)) {
-            echo "Seleção feita com sucesso <br>";
-            while ($row = mysqli_fetch_array( $result_query )) 
-{ 
-      print $row['cursoId'] . " -- " . $row['cursoTurma'] . " -- " . $row['chTotal'] . " -- " . $row['sigla'] . " -- " . $row['periodo']; 
-      print "<br>";
-};
-            
-      } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
-      }
-        
-        ?>
-
-        <table class="content" border="1">
-          <thead class="thead center">
+        $result_query = mysqli_query($conexao, $selecao);
+        if (mysqli_query($conexao, $selecao)) {
+            echo "Estes são os cursos: <br>";
+            echo "<table class='content' border='1'>
+            <thead class='thead center'>
+            <th>ID</th>
             <th>Curso</th>
             <th>Carga Horária</th>
             <th>Período</th>
-          </thead>
-          <tbody id="tbody">
-            <tr class="center">
-              <td>ADS</td>
-              <td>800 horas</td>
-              <td>Matutino</td>
-            </tr>
-            <tr class="center">
-              <td>ADS</td>
-              <td>800 horas</td>
-              <td>Vespertino</td>
-            </tr>
-            <tr class="center">
-              <td>SI</td>
-              <td>800 horas</td>
-              <td>Vespertino</td>
-            </tr>
-            <tr class="center">
-              <td>SI</td>
-              <td>800 horas</td>
-              <td>Noturno</td>
-            </tr>
-            <tr class="center">
-              <td>MED</td>
-              <td>1200 horas</td>
-              <td>Integral</td>
-            </tr>
-            <tr class="center">
-              <td>GES</td>
-              <td>800 horas</td>
-              <td>Vespertino</td>
-            </tr>
-            <tr class="center">
-              <td>GES</td>
-              <td>800 horas</td>
-              <td>Noturno</td>
-            </tr>
-          </tbody>
-        </table>
+            <th>Sigla/Código</th>
+            </thead>
+            <tbody id='tbody'>";
+
+            while ($row = mysqli_fetch_array( $result_query )) 
+{ 
+      print "<tr class='center'>";
+      print "<td>".$row['cursoId']."</td>";
+      print "<td>".$row['cursoTurma']."</td>";
+      print "<td>".$row['chTotal']."h</td>";
+      print "<td>".$row['periodo']."</td>";
+      print "<td>".$row['sigla']."</td>";
+      print "</tr>";
+      print "<br>";
+};
+echo "</tbody></table>";
+      } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
+      }
+        ?>
+
+        
       </div>
     </div>
 
