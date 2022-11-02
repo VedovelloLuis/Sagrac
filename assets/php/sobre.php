@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>SAGRAC - Visualizar Curso</title>
+    <title>SAGRAC - Home</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -15,14 +16,13 @@
       href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="../style/diretorStyle.css" />
+    <link href="../style/diretorHome.css" rel="stylesheet" />
   </head>
   <body>
 
-<?php 
-include('config.php');
 
-?>
 
+   <!--Wrapper da Sidebar  -->
     <div class="wrapper">
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -33,7 +33,7 @@ include('config.php');
             align="center"
           />
 
-        </div>
+        </div> 
         <ul class="list-unstyled components">
         <hr>
           <li class="active">
@@ -89,7 +89,8 @@ include('config.php');
           </li>
         </ul>
       </nav>
-      </nav>
+
+      <!-- Page Content Holder -->
       <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
@@ -98,77 +99,15 @@ include('config.php');
               <span></span>
               <span></span>
             </button>
-            <h4>Visualização de Cursos</h4>
+            <h4>Sobre</h4>
           </div>
         </nav>
 
-        <?php 
-        
-        $selecao = "SELECT * FROM tab_curso";
-      $result_query = mysqli_query($conexao, $selecao);
-      if (mysqli_query($conexao, $selecao)) {
-            echo "Seleção feita com sucesso <br>";
-            while ($row = mysqli_fetch_array( $result_query )) 
-{ 
-      print $row['cursoId'] . " -- " . $row['cursoTurma'] . " -- " . $row['chTotal'] . " -- " . $row['sigla'] . " -- " . $row['periodo']; 
-      print "<br>";
-};
-            
-      } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
-      }
-        
-        ?>
-
-        <table class="content" border="1">
-          <thead class="thead center">
-            <th>Curso</th>
-            <th>Carga Horária</th>
-            <th>Período</th>
-          </thead>
-          <tbody id="tbody">
-            <tr class="center">
-              <td>ADS</td>
-              <td>800 horas</td>
-              <td>Matutino</td>
-            </tr>
-            <tr class="center">
-              <td>ADS</td>
-              <td>800 horas</td>
-              <td>Vespertino</td>
-            </tr>
-            <tr class="center">
-              <td>SI</td>
-              <td>800 horas</td>
-              <td>Vespertino</td>
-            </tr>
-            <tr class="center">
-              <td>SI</td>
-              <td>800 horas</td>
-              <td>Noturno</td>
-            </tr>
-            <tr class="center">
-              <td>MED</td>
-              <td>1200 horas</td>
-              <td>Integral</td>
-            </tr>
-            <tr class="center">
-              <td>GES</td>
-              <td>800 horas</td>
-              <td>Vespertino</td>
-            </tr>
-            <tr class="center">
-              <td>GES</td>
-              <td>800 horas</td>
-              <td>Noturno</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
+       <h5 align='center'>Sistema desenvolvido por:</h5>
+       <h5 align='center'>Luis Vedovello</h5>
     <script src="../js/sidebar.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
   </body>
 </html>

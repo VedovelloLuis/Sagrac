@@ -2,22 +2,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link
-      rel="stylesheet"
-      href="../style/login.css"
-      style_type="text/css"
-    />
+
     <link
       rel="icon"
       type="image/x-icon"
       href="../img/sagracIcone.png"
     />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../img/sagracIcone.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../style/diretorStyle.css" />
+    <link href="../style/diretorHome.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login SAGRAC</title>
   </head>
 
   <body>
-    <br /><br /><br />
+<br>
+<hr>
 
     <div class="center">
       <div class="login">
@@ -25,31 +34,37 @@
           <img src="../img/sagracIcone.png" />
           <h1>SAGRAC</h1>
         </div>
-        <p class="bv">Bem vindo ao Sistema Automatizado de Grade  Curricular.</p>
+        <p class="bv">Sistema Automatizado de Grade  Curricular</p>
+
 
         <form method="post" action="index.php">
 
-          <label>Email:</label><br />
+          <label class="form-check-label">Email:</label><br />
           <input
             type="text"
             name="email"
             placeholder="Digite seu email:"
             class="text-field"
           /><br />
-          <label>Senha:</label><br />
+          <label class="form-check-label">Senha:</label><br />
           <input
             type="password"
             name="senha"
             placeholder="Digite sua senha:"
             class="password-field"
-          />
-          <p class="link"><a href="#">Esqueceu a senha?</a></p>
-
-            <input type="submit" name="enviar" value="Entrar" />
+            /> <hr>
+            <input
+              type="submit"
+              class="btn btn-primary"
+              name="enviar"
+              value="Entrar"
+              method="POST"
+            />
 
           <p class="duvidas">Insira os dados acima.</p>
-        </forma>
+        </form>
       </div>
+      <hr>
     </div>
   </body>
   

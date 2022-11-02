@@ -28,6 +28,7 @@ a:focus {
   border-radius: 0;
   margin-bottom: 40px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  
 }
 
 .navbar-btn {
@@ -53,6 +54,7 @@ a:focus {
   align-items: stretch;
   perspective: 1500px;
   
+  
 }
 
 #sidebar {
@@ -69,6 +71,8 @@ a:focus {
   margin-bottom: 40px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   margin-top: 17px;
+  
+
   
 
 }

@@ -29,14 +29,14 @@
 
         </div>
         <ul class="list-unstyled components">
+        <hr>
           <li class="active">
             <a
               href="#homeSubmenu"
               data-toggle="collapse"
               aria-expanded="false"
               class="dropdown-toggle"
-              >Criação de Grade</a
-            >
+              >Criação de Grade</a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
               <li>
                 <a href="diretorInserirCurso.php">Inserir Curso </a>
@@ -49,12 +49,40 @@
               </li>
             </ul>
           </li>
+          <hr>
+          <li class="active">
+            <a
+              href="#homeSubmenu2"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Professores</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu2">
+              <li>
+                <a href="diretorInserirCurso.php">Inserir Professor </a>
+              </li>
+              <li>
+                <a href="diretorEditarCurso.php">Editar Professor</a>
+              </li>
+              <li>
+                <a href="diretorVisualizarCursos.php">Visualizar Professores</a>
+              </li>
+            </ul>
+          </li>
+          <hr>
+          
+          
           <li>
+            
             <a href="diretorHome.php">Home</a>
+            <a href="sobre.php">Sobre</a>
+            <a href="login.php">Dashboard</a>
+            <a href="login.php">Configurações</a>
             <a href="login.php">Logout</a>
             <ul class="list-unstyled CTAs"></ul>
           </li>
         </ul>
+      </nav>
       </nav>
       <div id="content">
         <nav class="navbar navbar-expand-lg bg-light">
@@ -67,7 +95,7 @@
             <h4>Inserir Cursos</h4>
           </div>
         </nav>
-        <form method="POST" action="../assets/php/inserirCurso.php">
+        <form method="POST" action="inserirCurso.php">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nome">Nome do Curso</label>
@@ -79,17 +107,7 @@
                 placeholder="Nome do Curso"
               />
             </div>
-            <div class="form-group col-md-6">
-              <label for="nome">ID do Curso</label>
-              <input
-                type="number"
-                class="form-control"
-                name="id"
-                id="id"
-                placeholder="ID do Curso"
-              />
-            </div>
-            <div class="form-group col-md-6">
+              <div class="form-group col-md-6">
               <label for="carga">Carga Horária em Horas</label>
               <input
                 type="number"
@@ -99,13 +117,26 @@
                 placeholder="Carga Horária"
               />
             </div>
+            <div class="form-group col-md-6">
+              <label for="carga">Sigla do Curso</label>
+              <input
+                type="text"
+                class="form-control"
+                name="sigla"
+                id="sigla"
+                placeholder="Exemplo: ADS"
+              />
+            </div>
+            </div>
+           
             <div class="col-md-6 mt-4">
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox1"
-                  value="option1"
+                  type="radio"
+                  id="periodo"
+                  value="Matutino"
+                  name="periodo"
                 />
                 <label class="form-check-label" for="inlineCheckbox1"
                   >Matutino</label
@@ -114,9 +145,10 @@
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox2"
-                  value="option2"
+                  type="radio"
+                  id="periodo"
+                  value="Vespertino"
+                  name="periodo"
                 />
                 <label class="form-check-label" for="inlineCheckbox2"
                   >Vespertino</label
@@ -125,40 +157,35 @@
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox3"
-                  value="option3"
+                  type="radio"
+                  id="periodo"
+                  value="Noturno"
+                  name="periodo"
                 />
                 <label class="form-check-label" for="inlineCheckbox3"
                   >Noturno</label
                 >
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="inlineCheckbox4"
-                  value="option4"
-                />
-                <label class="form-check-label" for="inlineCheckbox4"
-                  >Integral</label
-                >
-              </div>
+                
             </div>
-          </div>
-          <div class="container__button">
+            <hr>
+                <div class="container__button">
+                  
             <input
               type="submit"
               class="btn btn-primary"
               name="enviar"
               value="Salvar Curso"
-              method="POST"
-            />
+              method="POST"/>
+              </div>
+
           </div>
+
+          </div>
+
         </form>
       </div>
 
-      <script src="../assets/js/sidebar.js"></script>
+      <script src="../js/sidebar.js"></script>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     </div>
