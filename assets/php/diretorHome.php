@@ -13,106 +13,106 @@ $conta_id = $_SESSION['contaId'];
 
 include('config.php');
 
+$sqlqtdcurso = "SELECT * from tab_curso";
+$sqlqtddiscip = "SELECT * from tab_disciplina";
+
+if ($result = mysqli_query($conexao, $sqlqtdcurso)) {
+
+  // Return the number of rows in result set
+  $qtd = mysqli_num_rows($result);
+} else {
+  printf("ERRO");
+}
+
+if ($resultd = mysqli_query($conexao, $sqlqtddiscip)) {
+
+  // Return the number of rows in result set
+  $qtddiscip = mysqli_num_rows($resultd);
+} else {
+  printf("ERRO");
+}
+
 ?>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>SAGRAC - Home</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../img/sagracIcone.ico"
-    />
-    <link
-      rel="stylesheet"
-      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../style/diretorStyle.css" />
-    <link href="../style/diretorHome.css" rel="stylesheet" />
-  </head>
-  <body>
-   <!--Wrapper da Sidebar  -->
-    <div class="wrapper">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>SAGRAC - Home</title>
+  <link rel="icon" type="image/x-icon" href="../img/sagracIcone.ico" />
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../style/diretorStyle.css" />
+  <link href="../style/diretorHome.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!--Wrapper da Sidebar  -->
+  <div class="wrapper">
     <nav id="sidebar">
-        <div class="sidebar-header">
-          <img
-            src="../img/sagracletras.png"
-            width="110%"
-            height="110%"
-            align="center"/>
-                    </div> 
-        <ul class="list-unstyled components">
+      <div class="sidebar-header">
+        <img src="../img/sagracletras.png" width="110%" height="110%" align="center" />
+      </div>
+      <ul class="list-unstyled components">
         <hr>
-          <li class="active">
-            <a
-              href="#homeSubmenu"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Criação de Grade</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li>
-                <a href="diretorInserirCurso.php">Inserir Curso </a>
-              </li>
-              <li>
-                <a href="diretorEditarCurso.php">Editar Curso</a>
-              </li>
-              <li>
-                <a href="diretorVisualizarCursos.php">Visualização dos Cursos</a>
-              </li>
-            </ul>
-          </li>
-          <hr>
-          <li class="active">
-            <a
-              href="#homeSubmenu2"
-              data-toggle="collapse"
-              aria-expanded="false"
-              class="dropdown-toggle"
-              >Professores</a>
-            <ul class="collapse list-unstyled" id="homeSubmenu2">
-              <li>
-                <a href="diretorInserirCurso.php">Inserir Professor </a>
-              </li>
-              <li>
-                <a href="diretorEditarCurso.php">Editar Professor</a>
-              </li>
-              <li>
-                <a href="diretorVisualizarCursos.php">Visualizar Professores</a>
-              </li>
-            </ul>
-          </li>
-          <hr>
-          <li>
-            <a href="diretorHome.php">Home</a>
-            <a href="sobre.php">Sobre</a>
-            <a href="login.php">Dashboard</a>
-            <a href="login.php">Configurações</a>
-            <a href="login.php">Logout</a>
-            <ul class="list-unstyled CTAs"></ul>
-          </li>
-        </ul>
+        <li class="active">
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Criação de Grade</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li>
+              <a href="diretorInserirCurso.php">Inserir Curso </a>
+            </li>
+            <li>
+              <a href="diretorEditarCurso.php">Editar Curso</a>
+            </li>
+            <li>
+              <a href="diretorVisualizarCursos.php">Visualização dos Cursos</a>
+            </li>
+          </ul>
+        </li>
+        <hr>
+        <li class="active">
+          <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Professores</a>
+          <ul class="collapse list-unstyled" id="homeSubmenu2">
+            <li>
+              <a href="diretorInserirCurso.php">Inserir Professor </a>
+            </li>
+            <li>
+              <a href="diretorEditarCurso.php">Editar Professor</a>
+            </li>
+            <li>
+              <a href="diretorVisualizarCursos.php">Visualizar Professores</a>
+            </li>
+          </ul>
+        </li>
+        <hr>
+        <li>
+          <a href="diretorHome.php">Home</a>
+          <a href="sobre.php">Sobre</a>
+          <a href="login.php">Dashboard</a>
+          <a href="login.php">Configurações</a>
+          <a href="login.php">Logout</a>
+          <ul class="list-unstyled CTAs"></ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button type="button" id="sidebarCollapse" class="navbar-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <h4><?php echo "Seja bem vindo, Diretor $nome."; ?></h4>
+        </div>
       </nav>
 
-      <!-- Page Content Holder -->
-      <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <button type="button" id="sidebarCollapse" class="navbar-btn">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <h4><?php echo "Seja bem vindo, Diretor $nome."; ?></h4>
-          </div>
-        </nav>
-
-        <!-- CONTEÚDO DA PÁGINA -->
-            <?php if ($conta_id = 1) {
-        echo"
+      <!-- CONTEÚDO DA PÁGINA -->
+      <?php if ($conta_id = 1) {
+        echo "
         <section>
         <div>
         <div class='row d-flex justify-content-center align-items-center h-100'>
@@ -129,11 +129,11 @@ include('config.php');
 
             <div class='d-flex justify-content-between text-center mt-5 mb-2'>
               <div>
-                <p class='mb-2 h5'>28</p>
+                <p class='mb-2 h5'>$qtd</p>
                 <p class='text-muted mb-0'>Cursos</p>
               </div>
               <div class='px-3'>
-                <p class='mb-2 h5'>244</p>
+                <p class='mb-2 h5'>$qtddiscip</p>
                 <p class='text-muted mb-0'>Disciplinas</p>
               </div>
               
@@ -253,10 +253,11 @@ include('config.php');
               <hr>
 
         ";
-      } else echo"Aluno."; ?> 
+      } else echo "Aluno."; ?>
       </p>
-    <script src="../js/sidebar.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  </body>
+      <script src="../js/sidebar.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+
 </html>
