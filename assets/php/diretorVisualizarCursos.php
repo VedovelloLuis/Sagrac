@@ -56,10 +56,7 @@
           </ul>
         </li>
         <hr>
-
-
         <li>
-
           <a href="diretorHome.php">Home</a>
           <a href="sobre.php">Sobre</a>
           <a href="login.php">Dashboard</a>
@@ -87,7 +84,6 @@
       $selecao = "SELECT * FROM tab_curso";
       $result_query = mysqli_query($conexao, $selecao);
       if (mysqli_query($conexao, $selecao)) {
-        echo "Estes são os cursos: <br>";
         echo "<table class='content' border='1'>
             <thead class='thead center'>
             <th>ID</th>
@@ -106,7 +102,7 @@
           print "<td>" . $row['periodo'] . "</td>";
           print "<td>" . $row['sigla'] . "</td>";
           print "</tr>";
-          print "<br>";
+
         };
         echo "</tbody></table>";
       } else {

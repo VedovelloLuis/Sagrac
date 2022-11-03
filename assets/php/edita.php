@@ -15,7 +15,7 @@
     </head>
 </head>
 
-<body>
+<body background="transparent">
 
     <?php
 
@@ -75,11 +75,6 @@
             }
         }
     }
-
-
-
-
-
     ?>
     <tr class='center'>
         <td><?php echo "$id" ?></td>
@@ -88,7 +83,6 @@
         <td><?php echo "$periodo" ?></td>
         <td><?php echo "$sigla" ?></td>
     </tr>
-    <br>
     </tbody>
     </table>
     <form method='POST' action='edita.php'>
@@ -107,7 +101,7 @@
             </div>
             <div class='form-group col-md-6'>
                 <label for='id'>ID</label>
-                <input type='text' class='form-control' name='id' id='id' value="<?php echo "$id" ?>" placeholder="<?php echo "$id" ?>" />
+                <input type='text' class='form-control' name='id' id='id' value="<?php echo "$id" ?>" placeholder="<?php echo "$id" ?>" readonly/>
             </div>
         </div>
         <div class="col-md-6 mt-4">

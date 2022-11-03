@@ -16,6 +16,9 @@
     />
     <link rel="stylesheet" href="../style/diretorStyle.css" />
   </head>
+
+  
+
   <body>
     <div class="wrapper">
     <nav id="sidebar">
@@ -95,7 +98,7 @@
             <h4>Inserir Cursos</h4>
           </div>
         </nav>
-        <form method="POST" action="inserirCurso.php">
+        <form method="POST" action="diretorInserirCurso.php">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="nome">Nome do Curso</label>
@@ -183,6 +186,40 @@
           </div>
 
         </form>
+
+        <?php
+
+include('config.php');
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['enviar'])) {
+        
+    $cursonome = $_POST["name"];
+    $chtotal = $_POST["carga"];
+    $sigla = $_POST["sigla"];
+  $periodo = $_POST["periodo"];
+
+include('config.php');
+
+if (!$conexao) {
+      die("Conexão não feita." . mysqli_connect_error());
+} else {
+      echo "Conectado com sucesso ao banco de dados <br>";
+      $sql = "INSERT INTO tab_curso (cursoId, cursoTurma, chTotal, sigla, periodo) VALUES (NULL, '$cursonome','$chtotal', '$sigla', '$periodo')";
+      if (mysqli_query($conexao, $sql)) {
+            echo "Nova inserção criada com sucesso <br>
+      ";
+      } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
+      }
+}
+
+
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
+        }
+        }
+    ?>
+
       </div>
 
       <script src="../js/sidebar.js"></script>

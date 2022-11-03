@@ -82,12 +82,17 @@
 
               include('config.php');
 
-              $selecao = "SELECT * FROM tab_curso WHERE periodo = 'Vespertino'";
-              $result_query = mysqli_query($conexao, $selecao);
-              if (mysqli_query($conexao, $selecao)) {
+              $selecaovesp = "SELECT * FROM tab_curso WHERE periodo = 'Vespertino'";
+              $selecaomat = "SELECT * FROM tab_curso WHERE periodo = 'Matutino'";
+              $selecaonot = "SELECT * FROM tab_curso WHERE periodo = 'Noturno'";
+              $result_vesp = mysqli_query($conexao, $selecaovesp);
+              $result_mat = mysqli_query($conexao, $selecaomat);
+              $result_not = mysqli_query($conexao, $selecaonot);
+
+              if (mysqli_query($conexao, $selecaovesp)) {
                 echo "<label for='Curso'>Escolha um curso:</label>";
                 echo "<optgroup label='Vespertino'>";
-                while ($row = mysqli_fetch_array($result_query)) {
+                while ($row = mysqli_fetch_array($result_vesp)) {
                   print "<option value=" . $row['cursoId'] . ">";
                   print $row['cursoTurma'];
                   print "</option>";
@@ -95,6 +100,30 @@
               } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
               }
+
+              if (mysqli_query($conexao, $selecaomat)) {
+                echo "</optgroup>
+                      <optgroup label='Matutino'>";
+                while ($row = mysqli_fetch_array($result_mat)) {
+                  print "<option value=" . $row['cursoId'] . ">";
+                  print $row['cursoTurma'];
+                  print "</option>";
+                };
+              } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
+              }
+              if (mysqli_query($conexao, $selecaonot)) {
+                echo "</optgroup>
+                      <optgroup label='Noturno'>";
+                while ($row = mysqli_fetch_array($result_not)) {
+                  print "<option value=" . $row['cursoId'] . ">";
+                  print $row['cursoTurma'];
+                  print "</option>";
+                };
+              } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conexao);
+              }
+
               ?>
 
               </optgroup>

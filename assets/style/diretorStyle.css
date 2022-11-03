@@ -4,6 +4,8 @@ body {
   font-family: "Poppins", sans-serif;
   background: #ffffff;
   /*FUNDO DA PAGINA DO TEXTO*/
+  background-color: white; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0, 98, 255, 0.143));
 }
 
 p {
@@ -86,7 +88,7 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #fff;
+  background: transparent;
 }
 
 #sidebar ul.components {
@@ -107,13 +109,13 @@ a:focus {
 #sidebar ul li a:hover,
 #sidebar .active a:hover {
   color: #161c3b;
-  background: #fff;
+  background: transparent;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
   color: #137DC5;
-  background: #ffffff;
+  background: transparent;
   /* FUNDO DE DASHBOARD e perfil*/
 }
 
