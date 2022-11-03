@@ -68,7 +68,7 @@
     </nav>
     </nav>
     <div id="content">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
         <div class="container-fluid">
           <button type="button" id="sidebarCollapse" class="navbar-btn">
             <span></span>
@@ -84,13 +84,13 @@
       $selecao = "SELECT * FROM tab_curso";
       $result_query = mysqli_query($conexao, $selecao);
       if (mysqli_query($conexao, $selecao)) {
-        echo "<table class='content' border='1'>
+        echo "<table id='Tabela' class='content' border='1'>
             <thead class='thead center'>
-            <th>ID</th>
-            <th>Curso</th>
-            <th>Carga Horária</th>
-            <th>Período</th>
-            <th>Sigla/Código</th>
+            <th onclick='sortTable(0)'>ID</th>
+            <th onclick='sortTable(1)'>Curso</th>
+            <th onclick='sortTable(2)'>Carga Horária</th>
+            <th onclick='sortTable(3)'>Período</th>
+            <th onclick='sortTable(4)'>Sigla/Código</th>
             </thead>
             <tbody id='tbody'>";
 
@@ -115,6 +115,7 @@
   </div>
 
   <script src="../js/sidebar.js"></script>
+  <script src="../js/tablesort.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
