@@ -5,11 +5,14 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
   unset($_SESSION['email']);
   unset($_SESSION['senha']);
   unset($_SESSION['nome']);
+  unset($_SESSION['diretorio']);
   header('location:login.php');
 }
 
 $nome = $_SESSION['nome'];
+$email = $_SESSION['email'];
 $conta_id = $_SESSION['contaId'];
+$diretorioperfil = $_SESSION['diretorio'];
 
 include('config.php');
 
@@ -48,211 +51,182 @@ if ($resultd = mysqli_query($conexao, $sqlqtddiscip)) {
 </head>
 
 <body>
-  <!--Wrapper da Sidebar  -->
-  <div class="wrapper">
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <img src="../img/sagracletras.png" width="110%" height="110%" align="center" />
-      </div>
-      <ul class="list-unstyled components">
-        <hr>
-        <li class="active">
-          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Criação de Grade</a>
-          <ul class="collapse list-unstyled" id="homeSubmenu">
-            <li>
-              <a href="diretorInserirCurso.php">Inserir Curso </a>
-            </li>
-            <li>
-              <a href="diretorEditarCurso.php">Editar Curso</a>
-            </li>
-            <li>
-              <a href="diretorVisualizarCursos.php">Visualização dos Cursos</a>
-            </li>
-          </ul>
-        </li>
-        <hr>
-        <li class="active">
-          <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Professores</a>
-          <ul class="collapse list-unstyled" id="homeSubmenu2">
-            <li>
-              <a href="diretorInserirCurso.php">Inserir Professor </a>
-            </li>
-            <li>
-              <a href="diretorEditarCurso.php">Editar Professor</a>
-            </li>
-            <li>
-              <a href="diretorVisualizarCursos.php">Visualizar Professores</a>
-            </li>
-          </ul>
-        </li>
-        <hr>
-        <li>
-          <a href="diretorHome.php">Home</a>
-          <a href="sobre.php">Sobre</a>
-          <a href="login.php">Dashboard</a>
-          <a href="login.php">Configurações</a>
-          <a href="login.php">Logout</a>
-          <ul class="list-unstyled CTAs"></ul>
-        </li>
-      </ul>
-    </nav>
-
+  
     <!-- Page Content Holder -->
     <div id="content">
       <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
         <div class="container-fluid">
-          <button type="button" id="sidebarCollapse" class="navbar-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+
           <h4><?php echo "Seja bem vindo, Diretor $nome."; ?></h4>
         </div>
       </nav>
-
+    <br>
       <!-- CONTEÚDO DA PÁGINA -->
       <?php if ($conta_id = 1) {
         echo "
-        <section>
-        <div>
-        <div class='row d-flex justify-content-center align-items-center h-100'>
-            <div class='col-md-12 col-xl-4'>
 
-        <div class='card' style='border-radius: 95px;'>
+    <div class='row'>
+      <div class='col-lg-4'>
+        <div class='card mb-4'>
           <div class='card-body text-center'>
-            <div class='mt-3 mb-4'>
-              <img src='../img/diretorprofile.png'
-                class='rounded-circle img-fluid' style='width: 100px;' />
-            </div>
-            <h4 class='mb-2'>$nome</h4>
-            <p class='text-muted mb-4'>Diretor</p>
-
-            <div class='d-flex justify-content-between text-center mt-5 mb-2'>
-              <div>
-                <p class='mb-2 h5'>$qtd</p>
-                <p class='text-muted mb-0'>Cursos</p>
-              </div>
-              <div class='px-3'>
-                <p class='mb-2 h5'>$qtddiscip</p>
-                <p class='text-muted mb-0'>Disciplinas</p>
-              </div>
-              
-              
-
-            </div>
-            
+            <img src='../img/$diretorioperfil' alt='avatar'
+              class='rounded-circle img-fluid' style='width: 150px;'>
+            <h5 class='my-3'>$nome</h5>
+            <p class='text-muted mb-1'>Diretor</p>
+            <p class='text-muted mb-4'>FATEC Antônio Russo</p>
 
           </div>
-          
         </div>
-            
+
+        <div class='card mb-5 mb-lg-0'>
+          <div class='card-body p-0'>
+            <ul class='list-group list-group-flush rounded-3'>
+              <li class='list-group-item d-flex justify-content-between align-items-center p-3'>
+                <i class='fas fa-globe fa-lg'>Redes do Projeto:</i>
+                <p class='mb-1'></p>
+              </li>
+              <li class='list-group-item d-flex justify-content-between align-items-center p-3'>
+                <i class='fab fa-github fa-lg' style='color: #333333;'> Github</i>
+                <p class='mb-2'>github.com/VedovelloLuis/Sagrac</p>
+              </li>
+              <li class='list-group-item d-flex justify-content-between align-items-center p-3'>
+                <i class='fab fa-twitter fa-lg' style='color: #55acee;'>Twitter</i>
+                <p class='mb-3'>@sagracProjeto</p>
+              </li>
+              <li class='list-group-item d-flex justify-content-between align-items-center p-3'>
+                <i class='fab fa-instagram fa-lg' style='color: #ac2bac;'>Blog</i>
+                <p class='mb-3'>sagrac.blogspot.com.br</p>
+              </li>
+              <li class='list-group-item d-flex justify-content-between align-items-center p-3'>
+                <i class='fab fa-facebook-f fa-lg' style='color: #3b5998;'>Celular p/ Contato</i>
+                <p class='mb-2'>(11) 95746-0706</p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-      
+      <div class='col-lg-8'>
+        <div class='card mb-4'>
+          <div class='card-body'>
+            <div class='row'>
+              <div class='col-sm-3'>
+                <p class='mb-0'>Nome Completo</p>
+              </div>
+              <div class='col-sm-9'>
+                <p class='text-muted mb-0'>$nome</p>
+              </div>
+            </div>
+            <hr>
+            <div class='row'>
+              <div class='col-sm-3'>
+                <p class='mb-0'>Email</p>
+              </div>
+              <div class='col-sm-9'>
+                <p class='text-muted mb-0'>$email</p>
+              </div>
+            </div>
+            <hr>
+            <div class='row'>
+              <div class='col-sm-3'>
+                <p class='mb-0'>Código</p>
+              </div>
+              <div class='col-sm-9'>
+                <p class='text-muted mb-0'>55.192.283-13</p>
+              </div>
+            </div>
+            <hr>
+            <div class='row'>
+              <div class='col-sm-3'>
+                <p class='mb-0'>Tipo de Login</p>
+              </div>
+              <div class='col-sm-9'>
+                <p class='text-muted mb-0'>Administrador</p>
+              </div>
+            </div>
+            <hr>
+            <div class='row'>
+              <div class='col-sm-3'>
+                <p class='mb-0'>Unidade</p>
+              </div>
+              <div class='col-sm-9'>
+                <p class='text-muted mb-0'>FATEC São Caetano</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-6'>
+            <div class='card mb-4 mb-md-0'>
+              <div class='card-body'>
+                <p class='mb-4'><span class='text-primary font-italic me-1'>Últimos</span> 5 cursos editados
+                </p>
+                <p class='mb-1' style='font-size: .77rem;'>Análise e Desenvolvimento de Sistemas</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='80'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Análise e Desenvolvimento de Software</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='72'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Engenharia Robótica</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='89'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Inteligência Artificial</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='55'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Robótica Industrial Automotiva</p>
+                <div class='progress rounded mb-2' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='66'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-6'>
+            <div class='card mb-4 mb-md-0'>
+              <div class='card-body'>
+                <p class='mb-4'><span class='text-primary font-italic me-1'>Últimos</span> 5 cursos criados
+                </p>
+                <p class='mb-1' style='font-size: .77rem;'>Robótica Industrial Automotiva</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='80'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Arquitetura de Inteligência Artificial</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='72'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Engenharia Robótica</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='89'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Engenharia Cibernética</p>
+                <div class='progress rounded' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='55'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+                <p class='mt-4 mb-1' style='font-size: .77rem;'>Construção Civil</p>
+                <div class='progress rounded mb-2' style='height: 5px;'>
+                  <div class='progress-bar' role='progressbar' style='width: 100%' aria-valuenow='100'
+                    aria-valuemin='0' aria-valuemax='100'></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
   </div>
-  <hr>
-  <h5 align='center'>Seu nível de acesso no momento é de: Diretor.</h5>
 </section>
-        <hr>
-        <p align='center'>Você pode iniciar, retomar ou editar cursos na aba 'Criação de Grade'.</p>
-        <hr>
-        <h3 align='center'>Como o Sistema funciona:</h3>
-        <hr>
-        <p>Através dos inputs do diretor, o sistema coleta o número de dias pelos quais devem estar distribuídas as aulas, que normalmente é de segunda-feira a sexta-feira.
-         Por exemplo: se a grade horária deve compreender os dias da semana de segunda-feira a sexta-feira, o número
-        de dias é 5. Esses dados são inseridos no código fonte do aplicativo.   </p>
-        <hr>
-        <p>As turmas ou períodos, ou seja, os oferecimentos de disciplinas, que serão inseridos no
-        aplicativo pelo usuário. Esta opção está disponível em cadastro de disciplinas, ao editar um curso.</p>
-        <h5 align='center'>Coleta de Disponibilidade de Professores</h5>
-        <hr>
-        <p>A disponibilidade de horário dos professores ao cadastro. Cada disponibilidade
-        tem um valor (um número inteiro no intervalo [0,1]) e o objetivo do programa é minimizar a
-        soma dos valores das disponibilidades não atendidas. Ele rodará a criação da Grade até que não hajam indisponibilidades para os professores. 
-        </p>
-        <hr>
-        <h2 align='center'>Como representar a Grade:</h2>
-        <hr>
-        <h4 align='center'>Caso de Uso: Análise e Desenvolvimento de Sistemas AMS Vespertino s/ Aulas de Sábado com 2 períodos e anos (4 semestres)</h4>
-        <hr>
-        <p>Para simplificar o sistema, não vamos utilizar o sábado. De acordo com o período, neste caso Vespertino, primeiro, É dada uma enumeração a cada linha da tabela da grade e seus horários, totalizando 10 horários em 1 semana. No total, temos 5 dias para distribuir as aulas.</p>
-        <hr>
-        <table class='table'>
-  <thead>
-    <tr>
-      <th scope='col'>Vespertino</th>
-      <th scope='col'>Segunda-Feira</th>
-      <th scope='col'>Terça-Feira</th>
-      <th scope='col'>Quarta-Feira</th>
-      <th scope='col'>Quinta-Feira</th>
-      <th scope='col'>Sexta-Feira</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope='row'>14:50-16:30</th>
-      <td>1</td>
-      <td>3</td>
-      <td>5</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th scope='row'>16:40-18:20</th>
-      <td>2</td>
-      <td>4</td>
-      <td>6</td>
-      <td>8</td>
-      <td>10</td>
-    </tr>
-  </tbody>
-</table>
-<hr>
-        <p>Com a enumeração dada para um dado período, fica mais fácil para o código ser ajustado pelo programador. Em seguida, coletamos a disponibilidade dos professores.</p>
-        <hr>
-        <h4>Tabela de Disponibilidade e Preferência de Horário dos Professores:<h4>
-        <hr>
-</h5>Caso de Uso: Um professor que pode trabalhar de quarta e terça.</h5>
-
-        <table class='table'>
-        <thead>
-          <tr>
-            <th scope='col'>Roberto</th>
-            <th scope='col'>Segunda-Feira</th>
-            <th scope='col'>Terça-Feira</th>
-            <th scope='col'>Quarta-Feira</th>
-            <th scope='col'>Quinta-Feira</th>
-            <th scope='col'>Sexta-Feira</th>
-      
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope='row'>14:50-16:30</th>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <th scope='row'>16:40-18:20</th>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </tbody>
-      </table>
-  
-      <hr>  
-      <p>Onde 1 significa disponível e 0 significa não disponível.</p>
-              <hr>
-
-        ";
+ ";
       } else echo "Aluno."; ?>
       </p>
       <script src="../js/sidebar.js"></script>

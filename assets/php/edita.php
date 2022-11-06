@@ -16,7 +16,7 @@
 </head>
 
 <body background="transparent">
-
+<br>
     <?php
 
     include('config.php');
@@ -76,6 +76,7 @@
         }
     }
     ?>
+    
     <tr class='center'>
         <td><?php echo "$id" ?></td>
         <td><?php echo "$cursonome" ?></td>
@@ -85,6 +86,7 @@
     </tr>
     </tbody>
     </table>
+    <br>
     <form method='POST' action='edita.php'>
         <div class='form-row'>
             <div class='form-group col-md-6'>

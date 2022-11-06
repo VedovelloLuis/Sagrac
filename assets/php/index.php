@@ -13,6 +13,7 @@ $row = mysqli_num_rows($resultado);
 while ($registro = mysqli_fetch_array($resultado)) {
     $nome = $registro['nome'];
     $cod = $registro['contaId'];
+    $diretorio = $registro['diretorioimg'];
 }
 
 if ($row > 0) {
@@ -20,13 +21,15 @@ if ($row > 0) {
     $_SESSION['senha'] = $senha;
     $_SESSION['nome'] = $nome;
     $_SESSION['contaId'] = $cod; 
-    header('location:diretorHome.php');
+    $_SESSION['diretorio'] = $diretorio; 
+    header('location:menu.php');
 } else {
     unset($_SESSION['usuario']);
     unset($_SESSION['senha']);
     unset($_SESSION['nome']); 
     unset($_SESSION['contaId']); 
-    header('location:login.php');
+    unset($_SESSION['diretorio']); 
+    header('location:index.html');
 
 }
 ?>

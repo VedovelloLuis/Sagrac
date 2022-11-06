@@ -1,16 +1,31 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 body {
-  font-family: "Poppins", sans-serif;
+    /*old: font-family: "Poppins", sans-serif; */
+  /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+  font-family: Georgia, serif;
   background: #ffffff;
   /*FUNDO DA PAGINA DO TEXTO*/
   background-color: white; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0, 98, 255, 0.016));
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(0, 98, 255, 0.05));
+  
+}
+
+.card {
+ background-color: rgba(255, 255, 255, 0.421); 
+ scale: 100%;
+
+
 }
 
 p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.1em;
+  /*old: font-family: "Poppins", sans-serif; */
+      /*old:font-size: 1.1em; */
+  /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+  font-family: Georgia, serif;
+  font-size: 14px;
+
+
   font-weight: 300;
   line-height: 1.7em;
   color: #0f5f96;
@@ -29,8 +44,8 @@ a:focus {
   padding: 15px 10px;
   background: transparent;
   border: none;
-  border-radius: 0;
-  margin-bottom: 40px;
+  border-radius: 40;
+  margin-bottom: 0px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.233);
 
 }
@@ -59,6 +74,7 @@ a:focus {
   perspective: 1500px;
 
 
+
 }
 
 #sidebar {
@@ -70,12 +86,11 @@ a:focus {
   padding: 20px;
   overflow-x: hidden;
   background: transparent;
-  border: none;
-  border-radius: 0;
-  margin-bottom: 40px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  margin-top: 17px;
-
+  border: black;
+  border-radius: 20;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 0px;
+  margin-right: 5px;
 
 
 
@@ -110,7 +125,29 @@ a:focus {
 #sidebar .active a:hover {
   color: #161c3b;
   background: transparent;
+  transform: scale(1.1, 1.1); /* Igual a scaleX(2) scaleY(0.5) */
+  transform-origin: center;
 }
+
+img{
+  transform: scale(1.0, 1.0); /* Igual a scaleX(2) scaleY(0.5) */
+  transform-origin: center;
+  transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
+
+}
+
+img:hover{
+  transform: scale(1.1, 1.1); /* Igual a scaleX(2) scaleY(0.5) */
+  transform-origin: center;
+  transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
+  cursor:pointer;
+
+
+}
+
+
+
+
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
@@ -168,6 +205,7 @@ a.article:hover {
   padding: 20px;
   min-height: 100vh;
   transition: all 0.3s;
+  margin-top: 0px;
 }
 
 #sidebarCollapse {
@@ -229,11 +267,11 @@ tr:last-of-type td:last-of-type {
 
 .content {
   width: 100%;
-  margin-top: 1.4rem;
-  margin-bottom: 3rem;
+  margin-top: 1px;
+  margin-bottom: 2px;
   border-collapse: collapse;
   border: 1px solid #219aea7e;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.32);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.32);
   background: transparent;
 }
 

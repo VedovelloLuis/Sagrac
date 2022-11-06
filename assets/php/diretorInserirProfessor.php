@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>SAGRAC - Inserir Curso</title>
+    <title>SAGRAC - Inserir Professor</title>
     <link
       rel="icon"
       type="image/x-icon"
@@ -23,14 +23,14 @@
       <div id="content">
       <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent">
           <div class="container-fluid">
-            <h4>Inserir Cursos</h4>
+            <h4>Inserir Professor</h4>
           </div>
         </nav>
         <br>
         <form method="POST" action="diretorInserirCurso.php">
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="nome">Nome do Curso</label>
+              <label for="nome">Nome do Professor</label>
               <input
                 type="text"
                 class="form-control"
