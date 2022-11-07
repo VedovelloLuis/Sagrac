@@ -252,6 +252,9 @@ a.article:hover {
     TABLE
 ----------------------------------------------------- */
 
+
+
+
 th:first-of-type {
   background: transparent;
 }
@@ -283,6 +286,7 @@ tr:last-of-type td:last-of-type {
 }
 
 .center {
+  margin: auto;
   height: 3rem;
   font-weight: 500;
   text-align: center;
